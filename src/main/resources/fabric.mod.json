@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "builders-toolkit",
+	"version": "${version}",
+	"name": "Builder's Toolkit",
+	"description": "A Minecraft QoL / building mod that allows anyone to create normally creative-exclusive in Survival without commands.",
+	"authors": [
+		"netheriteREX"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/builders-toolkit/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.netheriterex.BuilderSToolkit"
+		],
+		"client": [
+			"net.netheriterex.client.BuilderSToolkitClient"
+		]
+	},
+	"mixins": [
+		"builders-toolkit.mixins.json",
+		{
+			"config": "builders-toolkit.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
