@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "builders-toolkit",
+	"id": "builders_toolkit",
 	"version": "${version}",
 	"name": "Builder's Toolkit",
 	"description": "A Minecraft QoL / building mod that allows anyone to create normally creative-exclusive in Survival without commands.",
@@ -16,14 +16,14 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.netheriterex.BuilderSToolkit"
+			"net.netheriterex.builders_toolkit.BuilderSToolkit"
 		],
 		"client": [
-			"net.netheriterex.client.BuilderSToolkitClient"
+			"net.netheriterex.builders_toolkit.BuilderSToolkitClient"
 		]
 	},
 	"mixins": [
-		"builders-toolkit.mixins.json",
+		"builders_toolkit.mixins.json",
 		{
 			"config": "builders-toolkit.client.mixins.json",
 			"environment": "client"

@@ -1,4 +1,4 @@
-package net.netheriterex.client;
+package net.netheriterex.builders_toolkit;
 
 import net.fabricmc.api.ClientModInitializer;
 

@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "net.netheriterex.mixin",
+	"package": "net.netheriterex.builders_toolkit.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
 		"ExampleMixin"
