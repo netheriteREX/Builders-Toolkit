@@ -1,4 +1,4 @@
-package net.netheriterex.builders_toolkit.items;
+package net.netheriterex.builders_toolkit.item;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
@@ -9,12 +9,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.netheriterex.builders_toolkit.BuilderSToolkit;
+import net.netheriterex.builders_toolkit.item.custom.ClearDye;
 
 import java.util.function.Function;
 
 public class ModItems {
 
-    public static final Item CLEAR_DYE = registerItem("clear_dye", properties -> new Item(properties.stacksTo(64)));
+    public static final Item CLEAR_DYE = registerItem("clear_dye", properties -> new ClearDye(properties.stacksTo(64)));
 
     private static Item registerItem(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(BuilderSToolkit.MOD_ID, name),
