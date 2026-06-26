@@ -10,6 +10,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
 import net.minecraft.world.item.alchemy.Potions;
 import net.netheriterex.builders_toolkit.item.ModItems;
@@ -35,7 +37,12 @@ public class BuilderSToolkit implements ModInitializer {
 			if (contents == true) {
 				if (entity instanceof ArmorStand armorStand && stack.get(DataComponents.POTION_CONTENTS).is(Potions.WATER)) {
 					if (!world.isClientSide()) {
-						armorStand.setInvisible(false);
+						if (armorStand.isInvisible()) {
+							player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player,
+									new ItemStack(Items.GLASS_BOTTLE), true));
+							armorStand.setInvisible(false);
+						}
+
 					}
 					return InteractionResult.SUCCESS;
 				}
@@ -43,7 +50,7 @@ public class BuilderSToolkit implements ModInitializer {
 			return InteractionResult.PASS;
 		});
 
-		// This method let's Minecraft know that wee added new items to the game.
+		// This method lets Minecraft know that wee added new items to the game.
 		ModItems.registerModItems();
 
 		LOGGER.info("Hello Fabric world!");
