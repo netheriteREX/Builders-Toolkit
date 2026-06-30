@@ -4,6 +4,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
+import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +26,8 @@ public class ClearDye extends Item {
          */
 
         if (target instanceof ArmorStand armorStand) {
-            if (!player.level().isClientSide()) {
+            if (!player.level().isClientSide() && !armorStand.isInvisible()) {
+                itemStack.consume(1, player);
                 armorStand.setInvisible(true);
                 return InteractionResult.SUCCESS;
             }
