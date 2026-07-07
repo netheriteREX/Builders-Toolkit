@@ -12,5 +12,6 @@ public class BuilderSToolkitDataGenerator implements DataGeneratorEntrypoint {
 
         // Runs a lambda the actually runs the thing that gives the item model
         pack.addProvider(ModModelProvider::new);
+        pack.addProvider(ModRecipeProvider::new);
     }
 }
