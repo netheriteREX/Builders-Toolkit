@@ -3,7 +3,7 @@
 	"package": "net.netheriterex.builders_toolkit.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ExampleClientMixin"
+      "PlayerHeadMixin", "PlayerHeadItemMixin", "LoomScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

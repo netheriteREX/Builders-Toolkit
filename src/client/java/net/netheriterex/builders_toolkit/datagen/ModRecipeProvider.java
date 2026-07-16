@@ -36,7 +36,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         // ↓ The recipe gets unlocked by getting amethysts.
                         .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD));
 
-
+                shaped(RecipeCategory.DECORATIONS, Items.PLAYER_HEAD)
+                        .pattern("ooo")
+                        .pattern("oBo")
+                        .pattern("ooo")
+                        .define('o', Items.CLAY_BALL)
+                        .define('B', Items.OBSIDIAN)
+                        .unlockedBy(getHasName(Items.OBSIDIAN), has(Items.OBSIDIAN))
+                        .save(output);
             }
         };
     }

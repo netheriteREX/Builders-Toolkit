@@ -3,7 +3,10 @@
 	"package": "net.netheriterex.builders_toolkit.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"BannerPatternLayersMixin",
+		"BannerBlockEntityMixin",
+		"BannerDuplicateMixin",
+		"LoomMenuMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
